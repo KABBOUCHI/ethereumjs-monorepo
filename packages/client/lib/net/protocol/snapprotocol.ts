@@ -82,7 +82,13 @@ export class SnapProtocol extends Protocol {
       code: 0x00,
       response: 0x01,
       encode: ({ reqId, root, origin, limit, bytes }: GetAccountRangeOpts) => {
-        return [bigIntToBuffer(reqId ?? ++this.nextReqId), root, origin, limit, bytes]
+        return [
+          bigIntToBuffer(reqId ?? ++this.nextReqId),
+          setLengthLeft(root, 32),
+          setLengthLeft(origin, 32),
+          setLengthLeft(limit, 32),
+          bytes,
+        ]
       },
       decode: ([reqId, root, origin, limit, bytes]: any) => {
         return {
