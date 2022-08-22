@@ -1,4 +1,4 @@
-import { bigIntToBuffer, bufferToBigInt } from '@ethereumjs/util'
+import { bigIntToBuffer, bufferToBigInt, setLengthLeft } from '@ethereumjs/util'
 
 import { Protocol } from './protocol'
 
