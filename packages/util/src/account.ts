@@ -343,7 +343,9 @@ export const isZeroAddress = function (hexAddress: string): boolean {
 }
 
 /**
- * Converts a slim account RLP to a normal account RLP
+ * Converts a slim account (per snap protocol spec) to the RLP encoded version of the account
+ * @param body Array of 4 Buffer-like items to represent the account
+ * @returns RLP encoded version of the account
  */
 export function convertSlimAccount(body: any) {
   const cpy = [body[0], body[1], body[2], body[3]]

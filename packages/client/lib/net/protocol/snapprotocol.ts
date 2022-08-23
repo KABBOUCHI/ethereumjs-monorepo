@@ -4,16 +4,16 @@ import { Protocol } from './protocol'
 
 import type { Chain } from '../../blockchain'
 import type { Message, ProtocolOptions } from './protocol'
-import type { AccountData as AccountDataBody } from '@ethereumjs/util'
+import type { AccountData as AccountBody } from '@ethereumjs/util'
 
 interface SnapProtocolOptions extends ProtocolOptions {
   /* Blockchain */
   chain: Chain
 }
 
-type AccountData = {
+export type AccountData = {
   hash: Buffer
-  body: AccountDataBody
+  body: AccountBody
 }
 
 type GetAccountRangeOpts = {
